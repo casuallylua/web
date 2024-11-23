@@ -2837,35 +2837,26 @@ body.is-menu-visible #menu {
   visibility: visible; }
 
 
-/* General Styles */
-body {
-    background-color: #2d333b; /* Dark GitHub-like background */
-    color: #e0e0e0; /* Lighter text for contrast */
+.stats {
+    margin-top: 20px;
+    padding: 10px;
 }
 
-.about-heading, .about-text, .timeline-content p, .caption {
-    color: #e0e0e0; /* Ensure text remains visible */
+.stat {
+    margin-bottom: 15px;
 }
 
-.about-text {
-    opacity: 0;
-    transition: opacity 0.5s ease;
+.stat label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
 
-.highlight {
-    color: #fff;
-    background-color: #00ffcc; /* You can use a color that stands out */
-}
-
-.about-text.visible {
-    opacity: 1;
-}
-
-/* Stat Bar */
 .stat-bar {
     position: relative;
     height: 20px;
-    background: #444; /* Darker background for better contrast */
+    background: #eee;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -2877,7 +2868,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    background: linear-gradient(90deg, #00c6ff, #0072ff); /* Gradient effect */
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
     border-radius: 10px;
     transition: width 0.3s ease;
 }
@@ -2893,67 +2884,6 @@ body {
 #lua.stat-bar::after {
     width: 25%; /* Reflects 1 year */
 }
-
-.stat {
-    margin-bottom: 15px;
-}
-
-.stat label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #e0e0e0; /* Light text color */
-}
-
-/* Banner */
-#banner {
-    margin-top: 0;
-    padding-top: 0;
-    position: relative;
-    z-index: 1;
-}
-
-#banner video {
-    width: 100%;
-    height: 100vh;  /* Full viewport height */
-    object-fit: cover;  /* Ensure the video covers the section without distortion */
-}
-
-/* Deployment Counter Styles */
-.deployment-counter {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;  /* Align left next to the header */
-    gap: 8px;
-    background-color: #2c2f33; /* Neutral dark background */
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 10px;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: absolute;  /* Position it fixed at the top near the header */
-    top: 20px;
-    left: 50%;  /* Adjust to place near the center */
-    transform: translateX(-50%); /* Center the counter */
-    z-index: 1000;
-}
-
-.counter-icon {
-    color: #00d8ff; /* Accent color for the icon */
-    font-size: 1.2rem;
-}
-
-.counter-text {
-    white-space: nowrap;
-}
-
-/* Hover Effect */
-.deployment-counter:hover {
-    background-color: #7289da; /* Slightly brighter background on hover */
-    transition: background-color 0.3s ease;
-}
-
 /* Art Gallery Styling */
 .gallery {
     display: flex;
@@ -2961,7 +2891,6 @@ body {
     justify-content: center;
     gap: 20px;
 }
-
 .art-frame {
     border: 2px solid #ccc;
     border-radius: 10px;
@@ -2972,19 +2901,16 @@ body {
     max-width: 200px;
     width: 100%;
 }
-
 .art-frame img {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
-
 .caption {
     margin-top: 10px;
     font-size: 14px;
     color: #555;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .gallery {
@@ -2995,86 +2921,3 @@ body {
         max-width: 100%;
     }
 }
-
-/* Timeline Section */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.timeline-event {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-icon img, .timeline-icon i {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.timeline-content h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.timeline-content p {
-    margin: 0;
-    font-size: 1em;
-    color: #555;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .timeline-event {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .timeline-icon img, .timeline-icon i {
-        margin-bottom: 10px;
-    }
-
-    .timeline-icon i {
-        font-size: 2rem; /* Adjust size */
-        color: #4CAF50; /* Choose a theme color */
-        background: #e0e0e0; /* Background circle */
-        padding: 10px;
-        border-radius: 50%; /* Make it circular */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-    }
-}
-
-/* Additional Styles */
-a {
-    color: #00ffcc;  /* Accent color for links */
-}
-
-a:hover {
-    color: #00d8ff;  /* Brighter hover effect */
-}
-
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Keeps the particles behind the content */
-}
-
