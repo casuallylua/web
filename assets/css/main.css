@@ -2985,5 +2985,21 @@ body.is-menu-visible #menu {
     .timeline-icon img, .timeline-icon i {
         margin-bottom: 10px;
     }
+
+
+
+.timeline-icon i {
+    font-size: 2rem; /* Adjust size */
+    color: #4CAF50; /* Choose a theme color */
+    background: #e0e0e0; /* Background circle */
+    padding: 10px;
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
 }
 
