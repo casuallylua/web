@@ -2837,79 +2837,62 @@ body.is-menu-visible #menu {
   visibility: visible; }
 
 
-/* General Body and Text */
-body {
-    background-color: #2d333b; /* Dark GitHub-like background */
-    color: #e0e0e0; /* Lighter text for contrast */
+.stats {
+    margin-top: 20px;
+    padding: 10px;
 }
 
-.about-heading, .about-text {
-    color: #e0e0e0; /* Make sure the text remains visible */
+.stat {
+    margin-bottom: 15px;
 }
 
-/* About Me Section */
-.about {
-    border: 2px solid #e0e0e0;
-    padding: 20px;
-    background-color: #3a434f; /* Slightly darker background */
-    color: #e0e0e0;
+.stat label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
 
-.about-heading {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.about-text {
-    font-size: 1rem;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.highlight {
-    color: #fff;
-    background-color: #00ffcc; /* You can use a color that stands out */
-}
-
-.about-text.visible {
-    opacity: 1;
-}
-
-/* Deployment Counter Styles */
-.deployment-counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: #2c2f33; /* Neutral dark background */
-    color: #ffffff;
-    padding: 8px 16px;
+.stat-bar {
+    position: relative;
+    height: 20px;
+    background: #eee;
     border-radius: 10px;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 60px; /* Positioned just below the header */
-    right: 20px;
-    z-index: 1000;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.counter-icon {
-    color: #00d8ff; /* Accent color for the icon */
-    font-size: 1.2rem;
+.stat-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    transition: width 0.3s ease;
 }
 
-.counter-text {
-    white-space: nowrap;
+#python.stat-bar::after {
+    width: 75%; /* Reflects 3 years */
 }
 
-/* Hover Effect */
-.deployment-counter:hover {
-    background-color: #7289da; /* Slightly brighter background on hover */
-    transition: background-color 0.3s ease;
+#html-css.stat-bar::after {
+    width: 25%; /* Reflects 1 year */
 }
 
-/* Gallery and Art Frame Styles */
+#lua.stat-bar::after {
+
+    width: 25%; /* Reflects 1 year */
+}
+
+
+
+
+
+
+
+/* Art Gallery Styling */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -2918,11 +2901,11 @@ body {
 }
 
 .art-frame {
-    border: 2px solid #444; /* Darker border */
+    border: 2px solid #ccc;
     border-radius: 10px;
     padding: 10px;
-    background: #3a434f;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 200px;
     width: 100%;
@@ -2937,16 +2920,15 @@ body {
 .caption {
     margin-top: 10px;
     font-size: 14px;
-    color: #e0e0e0; /* White text */
+    color: #555;
 }
 
-/* Responsive Design for Gallery */
+/* Responsive Design */
 @media (max-width: 768px) {
     .gallery {
         flex-direction: column;
         align-items: center;
     }
-
     .art-frame {
         max-width: 100%;
     }
@@ -2990,7 +2972,7 @@ body {
     color: #555;
 }
 
-/* Responsive Design for Timeline */
+/* Responsive Design */
 @media (max-width: 768px) {
     .timeline-event {
         flex-direction: column;
@@ -3002,17 +2984,91 @@ body {
         margin-bottom: 10px;
     }
 
-    .timeline-icon i {
-        font-size: 2rem; /* Adjust size */
-        color: #4CAF50; /* Theme color */
-        background: #e0e0e0; /* Background circle */
-        padding: 10px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-    }
+
+
+.timeline-icon i {
+    font-size: 2rem; /* Adjust size */
+    color: #4CAF50; /* Choose a theme color */
+    background: #e0e0e0; /* Background circle */
+    padding: 10px;
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+
+
+/* Deployment Counter Styles */
+.deployment-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #2c2f33; /* Neutral dark background */
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 20px; /* Fixed position at the bottom-right corner */
+    right: 20px;
+    z-index: 1000;
+}
+
+.counter-icon {
+    color: #00d8ff; /* Accent color for the icon */
+    font-size: 1.2rem;
+}
+
+.counter-text {
+    white-space: nowrap;
+}
+
+/* Hover Effect */
+.deployment-counter:hover {
+    background-color: #7289da; /* Slightly brighter background on hover */
+    transition: background-color 0.3s ease;
+}
+
+
+}
+
+
+.about-text {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.highlight {
+    color: #fff;
+    background-color: #00ffcc; /* You can use a color that stands out */
+}
+
+.about-text.visible {
+    opacity: 1;
+}
+
+
+body {
+    background-color: #2d333b; /* Dark GitHub-like background */
+    color: #e0e0e0; /* Lighter text for contrast */
+}
+
+.about-heading, .about-text {
+    color: #e0e0e0; /* Make sure the text remains visible */
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keeps the particles behind the content */
 }
 
