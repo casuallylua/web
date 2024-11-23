@@ -3001,5 +3001,42 @@ body.is-menu-visible #menu {
     height: 60px;
 }
 
+
+
+/* Deployment Counter Styles */
+.deployment-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #2c2f33; /* Neutral dark background */
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 20px; /* Fixed position at the bottom-right corner */
+    right: 20px;
+    z-index: 1000;
+}
+
+.counter-icon {
+    color: #00d8ff; /* Accent color for the icon */
+    font-size: 1.2rem;
+}
+
+.counter-text {
+    white-space: nowrap;
+}
+
+/* Hover Effect */
+.deployment-counter:hover {
+    background-color: #7289da; /* Slightly brighter background on hover */
+    transition: background-color 0.3s ease;
+}
+
+
 }
 
