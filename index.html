@@ -22,13 +22,33 @@
         <nav><a href="#menu">Menu</a></nav>
     </header>
 
-    <header id="header">
-        <a class="logo" href="index.html">My Portfolio</a>
-        <nav><a href="#menu">Menu</a></nav>
-    </header>
-
     <!-- Nav -->
     <nav id="menu">
+        <!-- Navigation Menu Items -->
+    </nav>
+
+    <!-- Deployment Counter -->
+    <div class="deployment-counter">
+        <span class="counter-icon"><i class="fas fa-rocket"></i></span>
+        <span class="counter-text">Deployments: <span id="deployment-count">Loading...</span></span>
+    </div>
+
+    <!-- Fetch Script -->
+    <script>
+        // Fetch deployment count
+        fetch('deployments.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('deployment-count').textContent = data.deployments;
+            })
+            .catch(err => {
+                console.error("Error fetching deployment count:", err);
+                document.getElementById('deployment-count').textContent = "N/A";
+            });
+    </script>
+</body>
+</html>
+
         <ul class="links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#about">About Me</a></li>
