@@ -13,6 +13,9 @@
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Particles.js (used for background animation) -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body class="is-preload">
 
@@ -37,23 +40,6 @@
         <span class="counter-text">Deployments: <span id="deployment-count">Loading...</span></span>
     </div>
 
-    <!-- Fetch Script -->
-    <script>
-        // Fetch deployment count
-        fetch('deployments.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('deployment-count').textContent = data.deployments;
-            })
-            .catch(err => {
-                console.error("Error fetching deployment count:", err);
-                document.getElementById('deployment-count').textContent = "N/A";
-            });
-    </script>
-</body>
-</html>
-
-
     <!-- Banner -->
     <section id="banner">
         <div class="inner">
@@ -67,12 +53,68 @@
     </section>
 
     <!-- About Me -->
-    <section id="about" class="wrapper">
-        <div class="inner">
-            <header class="special">
-                <h2>About Me</h2>
-                <p>Hello, I am a beginner web developer, artist, and video creator! Welcome to my portfolio.</p>
-            </header>
+    <section id="about" class="about">
+        <h2 class="about-heading">About Me</h2>
+        <p class="about-text">I am a web developer with a passion for creating engaging user experiences and dynamic websites...</p>
+        <!-- More content -->
+    </section>
+
+    <!-- Particles Container -->
+    <div id="particles-js"></div>
+
+    <!-- Fetch Script for Deployment Counter -->
+    <script>
+        // Fetch deployment count
+        fetch('deployments.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('deployment-count').textContent = data.deployments;
+            })
+            .catch(err => {
+                console.error("Error fetching deployment count:", err);
+                document.getElementById('deployment-count').textContent = "N/A";
+            });
+
+        // Scroll-triggered text highlighting effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutText = document.querySelectorAll('.about-text');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible', 'highlight');
+                    } else {
+                        entry.target.classList.remove('visible', 'highlight');
+                    }
+                });
+            }, { threshold: 0.5 });
+            aboutText.forEach(text => observer.observe(text));
+        });
+
+        // Particles background effect triggered on scroll
+        let particlesInitialized = false;
+        document.addEventListener('scroll', () => {
+            if (!particlesInitialized && window.scrollY > 50) {
+                particlesInitialized = true;
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 100 },
+                        size: { value: 3 },
+                        move: { speed: 2 },
+                    },
+                    interactivity: {
+                        events: {
+                            onhover: { enable: true, mode: 'repulse' }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+</section>
 
             <!-- Stat Bars -->
             <div class="stats">
