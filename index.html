@@ -1,21 +1,12 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
 <head>
-    <!-- Font Awesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-    <!-- Meta and Title -->
     <title>My Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Personal Portfolio showcasing web development and digital art projects.">
     <meta name="keywords" content="portfolio, web developer, digital art, coding projects">
-    
-    <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
-
-    <!-- Particles.js (used for background animation) -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body class="is-preload">
 
@@ -25,20 +16,15 @@
         <nav><a href="#menu">Menu</a></nav>
     </header>
 
-    <!-- Nav Menu -->
+    <!-- Nav -->
     <nav id="menu">
         <ul class="links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
-    <!-- Deployment Counter -->
-    <div class="deployment-counter">
-        <span class="counter-icon"><i class="fas fa-rocket"></i></span>
-        <span class="counter-text">Deployments: <span id="deployment-count">Loading...</span></span>
-    </div>
 
     <!-- Banner -->
     <section id="banner">
@@ -53,130 +39,118 @@
     </section>
 
     <!-- About Me -->
-    <section id="about" class="about">
-        <h2 class="about-heading">About Me</h2>
-        <p class="about-text">I am a web developer with a passion for creating engaging user experiences and dynamic websites...</p>
-    </section>
-
-    <!-- Particles Container -->
-    <div id="particles-js"></div>
-
-    <!-- Stats -->
-    <section class="stats">
-        <div class="stat">
-            <label for="python">Python (3 years)</label>
-            <div class="stat-bar" id="python"></div>
-        </div>
-        <div class="stat">
-            <label for="html-css">HTML/CSS (1 year)</label>
-            <div class="stat-bar" id="html-css"></div>
-        </div>
-        <div class="stat">
-            <label for="lua">Lua (1 year)</label>
-            <div class="stat-bar" id="lua"></div>
-        </div>
-    </section>
-
-    <!-- Timeline -->
-    <section id="timeline" class="wrapper">
+    <section id="about" class="wrapper">
         <div class="inner">
             <header class="special">
-                <h2>My Current Goals</h2>
-                <p>Here’s what I’m working on and excited about!</p>
+                <h2>About Me</h2>
+                <p>Hello, I am a beginner web developer, artist, and video creator! Welcome to my portfolio.</p>
             </header>
-            <div class="timeline">
-                <div class="timeline-event">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Blender Rendering</h3>
-                        <p>Exploring lighting, shaders, and textures to create high-quality still images.</p>
-                    </div>
+
+            <!-- Stat Bars -->
+            <div class="stats">
+                <div class="stat">
+                    <label for="python">Python (3 years)</label>
+                    <div class="stat-bar" id="python"></div>
                 </div>
-                <div class="timeline-event">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-film"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Blender Animation</h3>
-                        <p>Working on animating objects and characters, including rigging and smooth motion sequences.</p>
-                    </div>
+                <div class="stat">
+                    <label for="html-css">HTML/CSS (1 year)</label>
+                    <div class="stat-bar" id="html-css"></div>
                 </div>
-                <div class="timeline-event">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-cube"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>3D Modeling</h3>
-                        <p>Creating assets from scratch, focusing on topology, UV mapping, and realistic textures.</p>
-                    </div>
+                <div class="stat">
+                    <label for="lua">Lua (1 year)</label>
+                    <div class="stat-bar" id="lua"></div>
                 </div>
-                <div class="timeline-event">
-                    <div class="timeline-icon">
-                        <i class="fa-solid fa-code"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="wrapper">
+        <div class="inner">
+            <header class="special">
+                <h2>My Projects</h2>
+                <p>Here’s a glimpse into some of the projects I’m working on.</p>
+            </header>
+            <div class="highlights">
+                <section>
+                    <div class="content">
+                        <header>
+                            <a href="#" class="icon fa-code"><span class="label">Project</span></a>
+                            <h3>Personal Portfolio</h3>
+                        </header>
+                        <p>A sleek and responsive personal website built to showcase my skills and projects.</p>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Python Mini-Projects</h3>
-                        <p>Learning Python by creating practical tools like a todo list app or an interactive game using Pygame.</p>
+                </section>
+                <section>
+                    <div class="content">
+                        <header>
+                            <a href="#art-gallery" class="icon fa-paint-brush"><span class="label">Project</span></a>
+                            <h3>Digital Art Gallery</h3>
+                        </header>
+                        <p>A showcase of my favorite digital artworks.</p>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </section>
 
     <!-- Art Gallery -->
     <section id="art-gallery" class="wrapper">
-        <div class="inner">
-            <header class="special">
-                <h2>Recent Blender Snapshots</h2>
-                <p>Explore some of my favorite creations.</p>
-            </header>
-            <div class="gallery">
-                <div class="art-frame">
-                    <img src="images/art1.png" alt="Most recent big render project, 'Gargantua'.">
-                    <p class="caption">Most recent big render project, 'Gargantua'.</p>
-                </div>
-                <div class="art-frame">
-                    <img src="images/art2.png" alt="Environment and Compositing practice.">
-                    <p class="caption">Environment and Compositing practice.</p>
-                </div>
-                <div class="art-frame">
-                    <img src="images/art3.png" alt="Artwork 3">
-                    <p class="caption">Artwork Title 3</p>
-                </div>
-                <div class="art-frame">
-                    <img src="images/art4.png" alt="Artwork 4">
-                    <p class="caption">Artwork Title 4</p>
-                </div>
+       
+    <div class="inner">
+        <header class="special">
+            <h2>Digital Art Gallery</h2>
+            <p>Explore some of my favorite creations.</p>
+        </header>
+        <div class="gallery">
+            <div class="art-frame">
+                <img src="images/art1.png" alt="Artwork 1">
+                <p class="caption">Artwork Title 1</p>
+            </div>
+            <div class="art-frame">
+                <img src="images/art2.png" alt="Artwork 2">
+                <p class="caption">Artwork Title 2</p>
+            </div>
+            <div class="art-frame">
+                <img src="images/art3.png" alt="Artwork 3">
+                <p class="caption">Artwork Title 3</p>
+            </div>
+            <div class="art-frame">
+                <img src="images/art4.png" alt="Artwork 4">
+                <p class="caption">Artwork Title 4</p>
             </div>
         </div>
     </section>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact" class="wrapper">
-        <div class="inner">
-            <h2>Contact Me</h2>
-            <p>If you’d like to collaborate or simply say hello, feel free to reach out!</p>
+   <!-- Contact -->
+   <section id="contact" class="wrapper">
+       <div class="inner">
+           <h2>Contact Me</h2>
+           <p>If you’d like to collaborate or simply say hello, feel free to reach out!</p>
 
-            <!-- Contact Form -->
-            <form id="contactForm">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+           <!-- Contact Form -->
+           <form id="contactForm">
+               <div>
+                   <label for="name">Name:</label>
+                   <input type="text" id="name" name="name" required>
+               </div>
+               <div>
+                   <label for="email">Email:</label>
+                   <input type="email" id="email" name="email" required>
+               </div>
+               <div>
+                   <label for="message">Message:</label>
+                   <textarea id="message" name="message" rows="4" required></textarea>
+               </div>
+               <button type="submit">Send Message</button>
+           </form>
+       </div>
+       <!-- Firebase CDN -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+       <script src="./mail.js"></script>
+   </section>
 
     <!-- Footer -->
     <footer id="footer">
@@ -214,3 +188,4 @@
             });
         });
     </script>
+</body>
