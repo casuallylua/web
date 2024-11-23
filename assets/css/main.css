@@ -2884,5 +2884,55 @@ body.is-menu-visible #menu {
 }
 
 #lua.stat-bar::after {
+
     width: 25%; /* Reflects 1 year */
 }
+
+
+
+
+
+
+
+/* Art Gallery Styling */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.art-frame {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 200px;
+    width: 100%;
+}
+
+.art-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .art-frame {
+        max-width: 100%;
+    }
+}
+
